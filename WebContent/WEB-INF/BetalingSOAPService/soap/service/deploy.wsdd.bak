@@ -1,0 +1,46 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from BetalingSOAPService WSDL service -->
+
+  <service name="BetalingSOAP" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://service.soap"/>
+      <parameter name="wsdlServiceElement" value="BetalingSOAPService"/>
+      <parameter name="schemaQualified" value="http://service.soap"/>
+      <parameter name="wsdlServicePort" value="BetalingSOAP"/>
+      <parameter name="className" value="soap.service.BetalingSOAPSoapBindingImpl"/>
+      <parameter name="wsdlPortType" value="BetalingSOAP"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation name="getName" qname="operNS:getName" xmlns:operNS="http://service.soap" returnQName="retNS:getNameReturn" xmlns:retNS="http://service.soap" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+      </operation>
+      <operation name="getValue" qname="operNS:getValue" xmlns:operNS="http://service.soap" returnQName="retNS:getValueReturn" xmlns:retNS="http://service.soap" returnType="rtns:int" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+      </operation>
+      <operation name="setName" qname="operNS:setName" xmlns:operNS="http://service.soap" soapAction="" >
+        <parameter qname="pns:name" xmlns:pns="http://service.soap" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="setValue" qname="operNS:setValue" xmlns:operNS="http://service.soap" soapAction="" >
+        <parameter qname="pns:value" xmlns:pns="http://service.soap" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="id" qname="operNS:id" xmlns:operNS="http://service.soap" returnQName="retNS:idReturn" xmlns:retNS="http://service.soap" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:naam" xmlns:pns="http://service.soap" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:adres" xmlns:pns="http://service.soap" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:value" xmlns:pns="http://service.soap" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getAdress" qname="operNS:getAdress" xmlns:operNS="http://service.soap" returnQName="retNS:getAdressReturn" xmlns:retNS="http://service.soap" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+      </operation>
+      <operation name="setAdress" qname="operNS:setAdress" xmlns:operNS="http://service.soap" soapAction="" >
+        <parameter qname="pns:adress" xmlns:pns="http://service.soap" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <parameter name="allowedMethods" value="setName setAdress getValue getName setValue id getAdress"/>
+
+  </service>
+</deployment>

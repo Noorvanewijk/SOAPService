@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://service.soap" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://service.soap" xmlns:intf="http://service.soap" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://service.soap" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="getName">
+    <complexType/>
+   </element>
+   <element name="getNameResponse">
+    <complexType>
+     <sequence>
+      <element name="getNameReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getValue">
+    <complexType/>
+   </element>
+   <element name="getValueResponse">
+    <complexType>
+     <sequence>
+      <element name="getValueReturn" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setName">
+    <complexType>
+     <sequence>
+      <element name="name" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setNameResponse">
+    <complexType/>
+   </element>
+   <element name="setValue">
+    <complexType>
+     <sequence>
+      <element name="value" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setValueResponse">
+    <complexType/>
+   </element>
+   <element name="id">
+    <complexType>
+     <sequence>
+      <element name="naam" type="xsd:string"/>
+      <element name="adres" type="xsd:string"/>
+      <element name="value" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="idResponse">
+    <complexType>
+     <sequence>
+      <element name="idReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getAdress">
+    <complexType/>
+   </element>
+   <element name="getAdressResponse">
+    <complexType>
+     <sequence>
+      <element name="getAdressReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setAdress">
+    <complexType>
+     <sequence>
+      <element name="adress" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setAdressResponse">
+    <complexType/>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="getValueResponse">
+
+      <wsdl:part element="impl:getValueResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getValueRequest">
+
+      <wsdl:part element="impl:getValue" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setAdressRequest">
+
+      <wsdl:part element="impl:setAdress" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getAdressRequest">
+
+      <wsdl:part element="impl:getAdress" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getNameResponse">
+
+      <wsdl:part element="impl:getNameResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setValueRequest">
+
+      <wsdl:part element="impl:setValue" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setNameResponse">
+
+      <wsdl:part element="impl:setNameResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getNameRequest">
+
+      <wsdl:part element="impl:getName" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getAdressResponse">
+
+      <wsdl:part element="impl:getAdressResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setValueResponse">
+
+      <wsdl:part element="impl:setValueResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="idRequest">
+
+      <wsdl:part element="impl:id" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setNameRequest">
+
+      <wsdl:part element="impl:setName" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="idResponse">
+
+      <wsdl:part element="impl:idResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setAdressResponse">
+
+      <wsdl:part element="impl:setAdressResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="BetalingSOAP">
+
+      <wsdl:operation name="getName">
+
+         <wsdl:input message="impl:getNameRequest" name="getNameRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getNameResponse" name="getNameResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getValue">
+
+         <wsdl:input message="impl:getValueRequest" name="getValueRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getValueResponse" name="getValueResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setName">
+
+         <wsdl:input message="impl:setNameRequest" name="setNameRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:setNameResponse" name="setNameResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setValue">
+
+         <wsdl:input message="impl:setValueRequest" name="setValueRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:setValueResponse" name="setValueResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="id">
+
+         <wsdl:input message="impl:idRequest" name="idRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:idResponse" name="idResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getAdress">
+
+         <wsdl:input message="impl:getAdressRequest" name="getAdressRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getAdressResponse" name="getAdressResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setAdress">
+
+         <wsdl:input message="impl:setAdressRequest" name="setAdressRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:setAdressResponse" name="setAdressResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="BetalingSOAPSoapBinding" type="impl:BetalingSOAP">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="getName">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getNameRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getNameResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getValue">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getValueRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getValueResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setName">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setNameRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setNameResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setValue">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setValueRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setValueResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="id">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="idRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="idResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getAdress">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getAdressRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getAdressResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setAdress">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setAdressRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setAdressResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="BetalingSOAPService">
+
+      <wsdl:port binding="impl:BetalingSOAPSoapBinding" name="BetalingSOAP">
+
+         <wsdlsoap:address location="http://localhost:7766/SOAPService/services/BetalingSOAP"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
